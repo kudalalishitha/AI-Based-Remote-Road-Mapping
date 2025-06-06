@@ -35,4 +35,4 @@ OpenCV (for image preprocessing)
 Frontend:
 HTML, CSS
 Bootstrap (via Django templates)
-JavaScript (optional for interactivity)
+JavaScript (optional for interactivity).
