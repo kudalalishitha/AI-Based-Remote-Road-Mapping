@@ -1,0 +1,70 @@
+{% extends "base(admin).html" %} {% block content %} {% load static %}
+
+<div class="container">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Pending Users</div>
+      </div>
+      <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                {% comment %} <th scope="col">User Profile</th> {% endcomment %}
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Age</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in user %}
+              <tr class="">
+                {% comment %} <td><img src="media/{{ i.photo}}" style="border-radius: 50%; width: 50px; height: 50px" /></td> {% endcomment %}
+                <td><span style="color: #333">{{ i.full_name }}</span></td>
+                <td><span style="color: #333">{{ i.email}}</span></td>
+                <td><span style="color: #333">{{ i.phone_number }}</span></td>
+                <td><span style="color: #333">{{ i.age }}</span></td>
+
+                <td class="text-warning"><span style="color: #333">{{ i.status }}</span></td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                      <!-- Add margin-right class here -->
+                      <a href="{% url 'admin_accept_user' i.pk %}">
+                        <button type="button" class="btn btn-success btn-sm btn-icon-text accept-button"> Accept <i class="fa fa-check"></i> </button>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="{% url 'admin_reject_user' i.pk %}">
+                        <button type="button" class="btn btn-danger btn-sm btn-icon-text reject-button"> Reject <i class="fa fa-times"></i> </button>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </form>
+
+        <nav aria-label="Page navigation example ">
+          <ul class="pagination ml-2">
+            {% if user.has_previous %}
+            <li class="page-item"><a class="page-link bg-info text-white" href="?page={{ user.previous_page_number }}">Previous</a></li>
+            {% endif %} {% if user.has_next %}
+            <li class="page-item"><a class="page-link bg-info text-white" href="?page={{ user.next_page_number }}">Next</a></li>
+            {% endif %}
+          </ul>
+          Page {{ user.number }} of {{ user.paginator.num_pages }}.
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

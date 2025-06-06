@@ -1,0 +1,43 @@
+{% extends "base(admin).html" %} {% block content %} {% load static %}
+<div class="container">
+  <div class="page-inner">
+    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"></div>
+
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">VIEWING TRAIN TEST SPLIT</div>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Dataset</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Training Images</td>
+                <td>3984</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Testing Images</td>
+                <td>996</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Validation Images</td>
+                <td>1246</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

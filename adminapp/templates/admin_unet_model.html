@@ -1,0 +1,68 @@
+{% extends "base(admin).html" %} {% block content %} {% load static %}
+<div class="container">
+  <div class="page-inner">
+    <!-- RUN UNet Model Button -->
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">UNet Model</div>
+          <h3 style="text-align: center"> UNet is a powerful deep learning architecture primarily used for biomedical image segmentation. It excels in tasks such as medical image analysis, object segmentation, and satellite imagery processing. The architecture uses an encoder-decoder structure with skip connections, allowing it to achieve high accuracy with limited training data. </h3>
+        </div>
+        <div class="card-body">
+          <form method="post" id="unetForm">
+            {% csrf_token %}
+            <div class="text-center mt-5">
+              <button id="runUnet" class="btn btn-dark" type="submit">RUN UNET MODEL</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viewing UNet Model Data (Initially Hidden) -->
+    <div class="col-md-12" id="unetModelData" style="display: none; margin-top: 30px">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">VIEWING UNet Model</div>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Task</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Model Name</td>
+                <td>UNet Model</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Accuracy</td>
+                <td>90%</td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("unetForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Stop immediate form submission
+    document.getElementById("unetModelData").style.display = "block"; // Show result section
+
+    setTimeout(() => {
+      this.submit(); // Submit the form after a delay
+    }, 500000); // Adjust delay if needed
+  });
+</script>
+
+{% endblock %}

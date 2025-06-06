@@ -1,0 +1,201 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<!-- Carousel Start -->
+<div class="container-fluid px-0 mb-5">
+  <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="w-100" src="{% static 'img/re6.jpg' %}" alt="Satellite Image of Roads" />
+        <div class="carousel-caption">
+          <div class="container">
+            <div class="row justify-content-start">
+              <div class="col-lg-8 text-start">
+                <p class="fs-4 text-white">Road Extraction from Satellite Imagery</p>
+                <h1 class="display-1 text-white mb-5 animated slideInRight"> AI Based Remote Road Mapping Using Satellite Imagery </h1>
+                <a href="#" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight"> Explore Project </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="w-100" src="{% static 'img/re7.jpg' %}" alt="Processed Road Map" />
+        <div class="carousel-caption">
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="col-lg-8 text-end">
+                <p class="fs-4 text-white">Advanced Geospatial Analysis</p>
+                <h1 class="display-1 text-white mb-5 animated slideInRight"> Extracting Road Networks from Space </h1>
+                <a href="#" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInLeft"> View Details </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- Carousel End -->
+
+<!-- About Start -->
+<div class="container-xxl pb-5">
+  <div class="container">
+    <div class="row g-5 align-items-end">
+      <div class="col-lg-6">
+        <div class="row g-2">
+          <div class="col-6 position-relative wow fadeIn" data-wow-delay="0.7s">
+            <div class="about-experience bg-secondary rounded">
+              <h1 class="display-1 mb-0">5</h1>
+              <small class="fs-5 fw-bold">Years of Expertise</small>
+            </div>
+          </div>
+          <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
+            <img class="img-fluid rounded" src="{% static 'img/re1.png' %}" alt="Road Extraction Process" />
+          </div>
+          <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
+            <img class="img-fluid rounded" src="{% static 'img/re8.jpg' %}" alt="Satellite View" />
+          </div>
+          <div class="col-6 wow fadeIn" data-wow-delay="0.5s">
+            <img class="img-fluid rounded" src="{% static 'img/re9.jpg' %}" alt="Extracted Road Network" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+        <p class="section-title bg-white text-start text-primary pe-3">About Road Extraction</p>
+
+        <div class="row g-5 pt-2 mb-5">
+          <div class="col-sm-6">
+            <i class="fas fa-satellite-dish fa-3x mb-4 text-danger"></i>
+            <h5 class="mb-3">Cutting-Edge Satellite Analysis</h5>
+            <span> Utilizing state-of-the-art satellite imagery to capture detailed views of both urban and rural road networks. </span>
+          </div>
+          <div class="col-sm-6">
+            <i class="fas fa-road fa-3x mb-4 text-warning"></i>
+            <h5 class="mb-3">Accurate Road Mapping</h5>
+            <span> Employing deep learning models to efficiently extract and map road structures, enhancing navigation and planning. </span>
+          </div>
+        </div>
+        <a class="btn btn-secondary rounded-pill py-3 px-5" href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About End -->
+<!-- Features Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <p class="section-title bg-white text-start text-primary pe-3">Why Choose Us!</p>
+        <h1 class="mb-4">Key Reasons to Choose Our Road Extraction System</h1>
+        <p class="mb-4"> Our AI-powered road extraction system leverages satellite imagery and deep learning to provide accurate, high-quality road mapping solutions for urban planning and navigation. </p>
+        <p><i class="fa fa-check text-primary me-3"></i>High-precision road detection with deep learning</p>
+        <p><i class="fa fa-check text-primary me-3"></i>Reliable mapping for both urban and rural areas</p>
+        <p><i class="fa fa-check text-primary me-3"></i>Seamless integration with GIS and mapping applications</p>
+        <a class="btn btn-secondary rounded-pill py-3 px-5 mt-3" href="#">Learn More</a>
+      </div>
+      <div class="col-lg-6">
+        <div class="rounded overflow-hidden">
+          <div class="row g-0">
+            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="text-center bg-primary py-5 px-4">
+                <i class="fa fa-satellite-dish fa-3x mb-4 text-white"></i>
+                <h1 class="display-6 text-white" data-toggle="counter-up">5</h1>
+                <span class="fs-5 fw-semi-bold text-secondary">Years of Research</span>
+              </div>
+            </div>
+            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+              <div class="text-center bg-secondary py-5 px-4">
+                <i class="fa fa-map-marked-alt fa-3x mb-4 text-primary"></i>
+                <h1 class="display-6" data-toggle="counter-up">1,500+</h1>
+                <span class="fs-5 fw-semi-bold text-primary">KM of Roads Mapped</span>
+              </div>
+            </div>
+            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+              <div class="text-center bg-secondary py-5 px-4">
+                <i class="fa fa-globe fa-3x mb-4 text-primary"></i>
+                <h1 class="display-6" data-toggle="counter-up">10+</h1>
+                <span class="fs-5 fw-semi-bold text-primary">Countries Covered</span>
+              </div>
+            </div>
+            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+              <div class="text-center bg-primary py-5 px-4">
+                <i class="fa fa-users fa-3x mb-4 text-white"></i>
+                <h1 class="display-6 text-white" data-toggle="counter-up">940</h1>
+                <span class="fs-5 fw-semi-bold text-secondary">Satisfied Users</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Features End -->
+<!-- Service Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
+      <p class="section-title bg-white text-center text-primary px-3">Our Services</p>
+      <h1 class="mb-5">Services We Offer for Road Extraction from Satellite Images</h1>
+    </div>
+    <div class="row gy-5 gx-4">
+      <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item d-flex h-100">
+          <div class="service-img">
+            <i class="bi bi-map fa-3x text-primary"></i>
+          </div>
+          <div class="service-text p-5 pt-0">
+            <div class="service-icon">
+              <i class="bi bi-map fa-3x text-primary"></i>
+            </div>
+            <h5 class="mb-3">AI-Powered Road Detection</h5>
+            <p class="mb-4">Our deep learning model accurately detects road networks from satellite images, aiding in urban planning and GIS mapping.</p>
+            <a class="btn btn-square rounded-circle" href="#"><i class="bi bi-chevron-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item d-flex h-100">
+          <div class="service-img">
+            <i class="bi bi-graph-up fa-3x text-primary"></i>
+          </div>
+          <div class="service-text p-5 pt-0">
+            <div class="service-icon">
+              <i class="bi bi-graph-up fa-3x text-primary"></i>
+            </div>
+            <h5 class="mb-3">Geospatial Data Analysis</h5>
+            <p class="mb-4">Analyze extracted road data for traffic management, disaster response, and infrastructure development.</p>
+            <a class="btn btn-square rounded-circle" href="#"><i class="bi bi-chevron-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item d-flex h-100">
+          <div class="service-img">
+            <i class="bi bi-tools fa-3x text-primary"></i>
+          </div>
+          <div class="service-text p-5 pt-0">
+            <div class="service-icon">
+              <i class="bi bi-tools fa-3x text-primary"></i>
+            </div>
+            <h5 class="mb-3">Customizable Extraction Models</h5>
+            <p class="mb-4">Adjust parameters for road width, surface type, and detection sensitivity based on user requirements.</p>
+            <a class="btn btn-square rounded-circle" href="#"><i class="bi bi-chevron-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Service End -->
+
+{% endblock %}

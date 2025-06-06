@@ -1,0 +1,79 @@
+{% extends "base(admin).html" %}
+{% block content %}
+{% load static %}
+<div class="container">
+  <div class="page-inner">
+    <!-- RUN ResNet Model Button -->
+    <div class="col-md-12">
+      <div class="card">
+        
+        <div class="card-header">
+          <div class="card-title">ResNet Model</div>
+          <h3 style="text-align: center">
+            ResNet (Residual Neural Network) is a deep learning architecture known for its skip connections, 
+            which help train very deep networks by mitigating the vanishing gradient problem. 
+            It has achieved state-of-the-art performance in image classification tasks on benchmark datasets 
+            such as ImageNet and COCO, and is widely used for object detection, segmentation, and other 
+            computer vision applications.
+          </h3>
+          
+        </div>
+        <div class="card-body">
+          <form method="post" id="resnetForm">
+            {% csrf_token %}
+            
+            <div class="text-center">
+              <button id="runResNet" class="btn btn-danger" type="submit">RUN RESNET MODEL</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viewing ResNet Model Data (Initially Hidden) -->
+    <div class="col-md-12" id="resnetModelData" style="display: none; margin-top: 30px;">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">VIEWING ResNet Model</div>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Task</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Model Name</td>
+                <td>ResNet Model</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Accuracy</td>
+                <td>92%</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("resnetForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Stop immediate form submission
+    document.getElementById("resnetModelData").style.display = "block"; // Show result section
+    
+    setTimeout(() => {
+      this.submit(); // Submit the form after a delay
+    }, 500000); // Adjust delay if needed
+  });
+</script>
+
+{% endblock %}

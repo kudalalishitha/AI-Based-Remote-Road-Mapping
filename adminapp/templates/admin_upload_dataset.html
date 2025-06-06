@@ -1,0 +1,139 @@
+{% extends "base(admin).html" %} {% block content %} {% load static %}
+<style>
+  .container {
+    margin-top: 50px;
+  }
+
+  .custom-file-input::-webkit-file-upload-button {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .custom-file-input::-webkit-file-upload-button:hover {
+    background-color: #0069d9;
+  }
+
+  .custom-file-input::-webkit-file-upload-button:active {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .custom-file-input::-webkit-file-upload-button:focus {
+    outline: none;
+  }
+
+  .custom-file-input::before {
+    content: "Select CSV or Excel file to upload";
+    color: #999;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-right: 10px;
+  }
+
+  .custom-file-input:focus::before {
+    border-color: #007bff;
+  }
+
+  .custom-file-input:active::before {
+    background-color: #f8f8f8;
+  }
+
+  .custom-file-input::after {
+    content: "Browse";
+    color: #fff;
+    display: inline-block;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .custom-file-input:focus::after {
+    background-color: #0069d9;
+  }
+
+  .custom-file-input:active::after {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .custom-file-input:focus::-webkit-file-upload-button {
+    outline: none;
+  }
+
+  .custom-file-input::-webkit-file-upload-button[disabled] {
+    cursor: not-allowed;
+    background-color: #ddd;
+    border-color: #ddd;
+  }
+
+  .custom-file-input:disabled::before {
+    background-color: #f8f8f8;
+    color: #aaa;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .custom-file-input:disabled::after {
+    background-color: #ddd;
+    border-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: #0069d9;
+  }
+
+  .submit-button:active {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+</style>
+
+<div class="content-wrapper">
+  <h6 class="btn btn-dark btn-xs pull-right">upload Dataset</h6>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Upload Data Set</h5>
+            <form method="POST" action="" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="fileInput" class="form-label">Choose file:</label>
+                <input type="file" class="form-control" id="fileInput" name="file" />
+              </div>
+              <button type="submit" class="btn btn-success btn-block submit-button">Submit</button>
+            </form>
+            <label for="fileInput" class="form-label mt-3">Upload Your Dataset File (only .csv and .xslx files accepted)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

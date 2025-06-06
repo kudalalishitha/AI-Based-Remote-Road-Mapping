@@ -1,0 +1,43 @@
+{% extends "base(admin).html" %} {% block content %} {% load static %}
+
+<div class="content-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-4">
+        <div class="card card-default card-mini">
+          <div class="card-header">
+            <div class="sub-title">
+              <span class="mr-1">Total Users</span> |
+              <i class="mdi mdi-arrow-up-bold text-success"></i>
+            </div>
+            <h2 class="mt-5">{{t_users}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card card-default card-mini">
+          <div class="card-header">
+            <div class="sub-title">
+              <span class="mr-1">Accepted Users</span> |
+              <i class="mdi mdi-arrow-up-bold text-success"></i>
+            </div>
+            <h2 class="mt-5">{{a_users}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card card-default card-mini">
+          <div class="card-header">
+            <div class="sub-title">
+              <span class="mr-1">Pending USers</span> |
+              <i class="mdi mdi-arrow-down-bold text-danger"></i>
+            </div>
+            <h2 class="mt-5">{{p_users}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base(admin).html" %} {% block content %} {% load static %}
+<div class="content-wrapper">
+     
+    <section class="section overflow-auto">
+        <div class="col-12">
+            <canvas id="sentimentsChart"></canvas>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <script>
+            const rating1Count = {{ rating_counts.rating1 }};
+            const rating2Count = {{ rating_counts.rating2 }};
+            const rating3Count = {{ rating_counts.rating3 }};
+            const rating4Count = {{ rating_counts.rating4 }};
+            const rating5Count = {{ rating_counts.rating5 }};
+            
+            const sentimentsData = {
+                labels: ['😢', '😐', '😊', '😄', '🌟'],
+                datasets: [{
+                    label: 'Sentiments',
+                    data: [rating1Count, rating2Count, rating3Count, rating4Count, rating5Count],
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            
+            // Create bar graph
+            const ctx = document.getElementById('sentimentsChart').getContext('2d');
+            const sentimentsChart = new Chart(ctx, {
+                type: 'bar',
+                data: sentimentsData,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    barThickness: '130', 
+                }
+            });
+        </script>
+    </section>
+    
+</div>
+
+{% endblock %}

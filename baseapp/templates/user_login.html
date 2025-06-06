@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<style>
+  .page-header {
+    background: url("{% static 'img/img10.jpg' %}") center center no-repeat;
+    background-size: cover;
+  }
+</style>
+<style>
+  .form-login {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .form-login:hover {
+    /* border: 2px solid #15b8d9c5 !important;  */
+    transform: scale(1.03);
+    box-shadow: none !important;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="col-12">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 align-items-center justify-content-center form-login">
+          <img src="{% static 'img/re1.png' %}" alt="" class="img-fluid" style="border-radius: 20px" />
+          <img src="{% static 'img/re11.jpg' %}" alt="" class="img-fluid" style="border-radius: 20px" />
+        </div>
+        <div class="col-md-6 p-5 form-login" style="background-color: #404a3dd2; border-radius: 20px; border: 2px solid black; box-shadow: 5px 4px 15px 2px grey">
+          <form action="" method="POST" class="form-box" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 class="text-white mb-4">User Login</h2>
+            <div class="form-group mb-4 col-10">
+              <input type="email" class="form-control" placeholder="Email Addresss" name="email" />
+            </div>
+            <div class="form-group mb-3 col-10">
+              <input type="password" class="form-control pl-2" placeholder="password" name="password" />
+              <div class="text-end mt-1">
+                <a class="text-warning" href="" style="font-size: 13px; text-decoration: underline"> Forgot password ? </a>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-danger btn-pill col-md-10 justify-content-center text fw-bold" type="submit">Login</button>
+              <p class="text-white py-2">Dont't have an account ? <a href="{% url 'user_register' %}" class="text-white">Register</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
